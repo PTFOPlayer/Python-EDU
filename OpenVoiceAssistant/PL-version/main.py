@@ -58,7 +58,7 @@ def filewrite(text):
 		Stext = recognizer.recognize_google(Saudio, language = "pl-PL") 
 		Stext = Stext.lower()
 	file = open("text.txt", "a")
-	file.write("jebać pis")
+	file.write(Stext)
 	file.close()
 
 def fileread(text):
