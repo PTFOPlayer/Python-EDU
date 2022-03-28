@@ -16,6 +16,7 @@ ram_graph = Progressbar(root, style="red.Horizontal.TProgressbar", orient="horiz
 gpu_monit = tk.Label(root , foreground = 'white', background = 'black', font = ('Helvetica', 12, 'bold'))
 gpu_graph = Progressbar(root, style="red.Horizontal.TProgressbar", orient="horizontal", length=400, mode='determinate')
 drives_monit = tk.Label(root, foreground = 'white', background = 'black', font = ('Helvetica', 12, 'bold'))
+net_monit = tk.Label(root, foreground = 'white', background = 'black', font = ('Helvetica', 12, 'bold'))
 cpu_monit.grid(row=0, column=0)
 cpu_graph.grid(row=1, column=0)
 ram_monit.grid(row=2, column=0)
@@ -23,6 +24,7 @@ ram_graph.grid(row=3, column=0)
 gpu_monit.grid(row=4, column=0)
 gpu_graph.grid(row=5, column=0)
 drives_monit.grid(row=7, column=0)
+net_monit.grid(row=8, column=0)
 root.title("PC Stats")
 
 def update_monit():
@@ -61,6 +63,7 @@ def update_monit():
                             #"sdd drive usage in % : " + str(processes.drives_monit_linux()[3]) + str(processes.drives_graph_linux()[3]) + "\n" +
                             #"sde drive usage in % : " + str(processes.drives_monit_linux()[4]) + str(processes.drives_graph_linux()[4]))
                             #linux drives under work
+        net_monit.config(text = "Network usage in Mb : " + str(processes.network_usage()))
     root.after(1000, update_monit)
 update_monit()
 root.mainloop()
