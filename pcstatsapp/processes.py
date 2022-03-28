@@ -108,10 +108,10 @@ def drives_graph_win():
 def drives_monit_linux():
     #monitoring disks usage on linux
     try:
-        sdadrive_usg = psutil.disk_usage('/dev/sda').percent
+        sdadrive_usg = psutil.disk_usage('/').percent
     except:
         sdadrive_usg = 0
-    try:
+   """ try:
         sdbdrive_usg = psutil.disk_usage('/dev/sdb').percent
     except:
         sdbdrive_usg = 0
@@ -126,16 +126,16 @@ def drives_monit_linux():
     try:
         sdedrive_usg = psutil.disk_usage('/dev/sde').percent
     except:
-        sdedrive_usg = 0
-    return sdadrive_usg, sdbdrive_usg, sdcdrive_usg, sdddrive_usg, sdedrive_usg
-
+        sdedrive_usg = 0 """
+    return sdadrive_usg #, sdbdrive_usg, sdcdrive_usg, sdddrive_usg, sdedrive_usg
+    #linux drives under work
 def drives_graph_linux():
     #drives usage graph
     try:
-        sdadrive_usg = psutil.disk_usage('/dev/sda').percent
+        sdadrive_usg = psutil.disk_usage('/').percent
     except:
         sdadrive_usg = 0
-    try:
+   """ try:
         sdbdrive_usg = psutil.disk_usage('/dev/sdb').percent
     except:
         sdbdrive_usg = 0
@@ -150,7 +150,7 @@ def drives_graph_linux():
     try:
         sdedrive_usg = psutil.disk_usage('/dev/sde').percent
     except:
-        sdedrive_usg = 0
+        sdedrive_usg = 0"""
     #drive sda usage graph
     sda_graph = ""
     sda_graph+= "|"
@@ -160,6 +160,7 @@ def drives_graph_linux():
     for i in range(20 - round_sdadrive):
         sda_graph+=" "
     sda_graph+="|"
+    """
     #drive sdb usage graph
     sdb_graph = ""
     sdb_graph+= "|"
@@ -195,16 +196,17 @@ def drives_graph_linux():
         sde_graph+="'"
     for i in range(20 - round_sdedrive):
         sde_graph+=" "
-    sde_graph+="|"
-    return sda_graph, sdb_graph, sdc_graph, sdd_graph, sde_graph
+    sde_graph+="|" """
+    return sda_graph #, sdb_graph, sdc_graph, sdd_graph, sde_graph
     
-
+net_usg = [1 , 2]
 def network_usage():
-    #monitoring network usage
-    net_usg = psutil.net_io_counters()
-    net_rec = round(net_usg.bytes_recv / 1024 / 1024, 4)
-    net_sen = round(net_usg.bytes_sent / 1024 / 1024, 4)
-    print("\n    Network usage in MB", "\n", "Received:", net_rec, " MB \n", "Sent:", net_sen, " MB") 
+    #monitoring network usage 
+    net_usg[1] = psutil.net_io_counters().bytes_recv
+    net_out = net_usg[1] - net_usg[0]
+    net_rec = round(net_out / 1024 / 1024 * 8, 4)
+    net_usg[0] = net_usg[1]
+    return net_rec
 
 def nvd_gpumem():
     #monitoring Nvidia GPU memory usage
