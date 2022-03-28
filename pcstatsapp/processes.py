@@ -135,22 +135,22 @@ def drives_graph_linux():
         sdadrive_usg = psutil.disk_usage('/').percent
     except:
         sdadrive_usg = 0
-   """ try:
-        sdbdrive_usg = psutil.disk_usage('/dev/sdb').percent
-    except:
-        sdbdrive_usg = 0
-    try:
-        sdcdrive_usg = psutil.disk_usage('/dev/sdc').percent
-    except:
-        sdcdrive_usg = 0
-    try:
-        sdddrive_usg = psutil.disk_usage('/dev/sdd').percent
-    except:
-        sdddrive_usg = 0
-    try:
-        sdedrive_usg = psutil.disk_usage('/dev/sde').percent
-    except:
-        sdedrive_usg = 0"""
+    # try:
+    #    sdbdrive_usg = psutil.disk_usage('/dev/sdb').percent
+    #except:
+    #    sdbdrive_usg = 0
+    #try:
+    #    sdcdrive_usg = psutil.disk_usage('/dev/sdc').percent
+    #except:
+    #    sdcdrive_usg = 0
+    #try:
+    #    sdddrive_usg = psutil.disk_usage('/dev/sdd').percent
+    #except:
+    #    sdddrive_usg = 0
+    #try:
+    #    sdedrive_usg = psutil.disk_usage('/dev/sde').percent
+    #except:
+    #    sdedrive_usg = 0
     #drive sda usage graph
     sda_graph = ""
     sda_graph+= "|"
@@ -160,43 +160,43 @@ def drives_graph_linux():
     for i in range(20 - round_sdadrive):
         sda_graph+=" "
     sda_graph+="|"
-    """
-    #drive sdb usage graph
-    sdb_graph = ""
-    sdb_graph+= "|"
-    round_sdbdrive = int(round(sdbdrive_usg, 0) / 5)
-    for i in range(round_sdbdrive):
-        sdb_graph+="'"
-    for i in range(20 - round_sdbdrive):
-        sdb_graph+=" "
-    sdb_graph+="|"
-    #drive sdc usage graph
-    sdc_graph = ""
-    sdc_graph+= "|"
-    round_sdcdrive = int(round(sdcdrive_usg, 0) / 5)
-    for i in range(round_sdcdrive):
-        sdc_graph+="'"
-    for i in range(20 - round_sdcdrive):
-        sdc_graph+=" "
-    sdc_graph+="|"
-    #drive sdd usage graph
-    sdd_graph = ""
-    sdd_graph+= "|"
-    round_sdddrive = int(round(sdddrive_usg, 0) / 5)
-    for i in range(round_sdddrive):
-        sdd_graph+="'"
-    for i in range(20 - round_sdddrive):
-        sdd_graph+=" "
-    sdd_graph+="|"
-    #drive sde usage graph
-    sde_graph = ""
-    sde_graph+= "|"
-    round_sdedrive = int(round(sdedrive_usg, 0) / 5)
-    for i in range(round_sdedrive):
-        sde_graph+="'"
-    for i in range(20 - round_sdedrive):
-        sde_graph+=" "
-    sde_graph+="|" """
+    #
+    ##drive sdb usage graph
+    #sdb_graph = ""
+    #sdb_graph+= "|"
+    #round_sdbdrive = int(round(sdbdrive_usg, 0) / 5)
+    #for i in range(round_sdbdrive):
+    #    sdb_graph+="'"
+    #for i in range(20 - round_sdbdrive):
+    #    sdb_graph+=" "
+    #sdb_graph+="|"
+    ##drive sdc usage graph
+    #sdc_graph = ""
+    #sdc_graph+= "|"
+    #round_sdcdrive = int(round(sdcdrive_usg, 0) / 5)
+    #for i in range(round_sdcdrive):
+    #    sdc_graph+="'"
+    #for i in range(20 - round_sdcdrive):
+    #    sdc_graph+=" "
+    #sdc_graph+="|"
+    ##drive sdd usage graph
+    #sdd_graph = ""
+    #sdd_graph+= "|"
+    #round_sdddrive = int(round(sdddrive_usg, 0) / 5)
+    #for i in range(round_sdddrive):
+    #    sdd_graph+="'"
+    #for i in range(20 - round_sdddrive):
+    #    sdd_graph+=" "
+    #sdd_graph+="|"
+    ##drive sde usage graph
+    #sde_graph = ""
+    #sde_graph+= "|"
+    #round_sdedrive = int(round(sdedrive_usg, 0) / 5)
+    #for i in range(round_sdedrive):
+    #    sde_graph+="'"
+    #for i in range(20 - round_sdedrive):
+    #    sde_graph+=" "
+    #sde_graph+="|" 
     return sda_graph #, sdb_graph, sdc_graph, sdd_graph, sde_graph
     
 net_usg = [1 , 2]
