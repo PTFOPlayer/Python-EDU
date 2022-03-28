@@ -54,11 +54,13 @@ def update_monit():
                             "F drive usage in % : " + str(processes.drives_monit_win()[3]) + str(processes.drives_graph_win()[3]) + "\n" +
                             "G drive usage in % : " + str(processes.drives_monit_win()[4]) + str(processes.drives_graph_win()[4]))
     except:
-        drives_monit.config(text= "sda drive usage in % : " + str(processes.drives_monit_linux()[0]) + str(processes.drives_graph_linux()[0]) + "\n" +
-                            "sdb drive usage in % : " + str(processes.drives_monit_linux()[1]) + str(processes.drives_graph_linux()[1]) +"\n" +
-                            "sdc drive usage in % : " + str(processes.drives_monit_linux()[2]) + str(processes.drives_graph_linux()[2]) + "\n" +
-                            "sdd drive usage in % : " + str(processes.drives_monit_linux()[3]) + str(processes.drives_graph_linux()[3]) + "\n" +
-                            "sde drive usage in % : " + str(processes.drives_monit_linux()[4]) + str(processes.drives_graph_linux()[4]))
+        drives_monit.config(text= "sda drive usage in % : " + str(processes.drives_monit_linux()[0]) + str(processes.drives_graph_linux()[0]))
+                            #+ "\n" +
+                            #"sdb drive usage in % : " + str(processes.drives_monit_linux()[1]) + str(processes.drives_graph_linux()[1]) +"\n" +
+                            #"sdc drive usage in % : " + str(processes.drives_monit_linux()[2]) + str(processes.drives_graph_linux()[2]) + "\n" +
+                            #"sdd drive usage in % : " + str(processes.drives_monit_linux()[3]) + str(processes.drives_graph_linux()[3]) + "\n" +
+                            #"sde drive usage in % : " + str(processes.drives_monit_linux()[4]) + str(processes.drives_graph_linux()[4]))
+                            #linux drives under work
     root.after(1000, update_monit)
 update_monit()
 root.mainloop()
