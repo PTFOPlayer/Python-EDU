@@ -111,22 +111,22 @@ def drives_monit_linux():
         sdadrive_usg = psutil.disk_usage('/').percent
     except:
         sdadrive_usg = 0
-   """ try:
-        sdbdrive_usg = psutil.disk_usage('/dev/sdb').percent
-    except:
-        sdbdrive_usg = 0
-    try:
-        sdcdrive_usg = psutil.disk_usage('/dev/sdc').percent
-    except:
-        sdcdrive_usg = 0
-    try:
-        sdddrive_usg = psutil.disk_usage('/dev/sdd').percent
-    except:
-        sdddrive_usg = 0
-    try:
-        sdedrive_usg = psutil.disk_usage('/dev/sde').percent
-    except:
-        sdedrive_usg = 0 """
+    #try:
+    #    sdbdrive_usg = psutil.disk_usage('/dev/sdb').percent
+    #except:
+    #    sdbdrive_usg = 0
+    #try:
+    #    sdcdrive_usg = psutil.disk_usage('/dev/sdc').percent
+    #except:
+    #    sdcdrive_usg = 0
+    #try:
+    #    sdddrive_usg = psutil.disk_usage('/dev/sdd').percent
+    #except:
+    #    sdddrive_usg = 0
+    #try:
+    #    sdedrive_usg = psutil.disk_usage('/dev/sde').percent
+    #except:
+    #    sdedrive_usg = 0 """
     return sdadrive_usg #, sdbdrive_usg, sdcdrive_usg, sdddrive_usg, sdedrive_usg
     #linux drives under work
 def drives_graph_linux():
