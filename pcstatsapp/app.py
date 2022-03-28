@@ -63,7 +63,7 @@ def update_monit():
                             #"sdd drive usage in % : " + str(processes.drives_monit_linux()[3]) + str(processes.drives_graph_linux()[3]) + "\n" +
                             #"sde drive usage in % : " + str(processes.drives_monit_linux()[4]) + str(processes.drives_graph_linux()[4]))
                             #linux drives under work
-        net_monit.config(text = "Network usage in Mb : " + str(processes.network_usage()))
+    net_monit.config(text = "Network usage in Mb : " + str(processes.network_usage()))
     root.after(1000, update_monit)
 update_monit()
 root.mainloop()
