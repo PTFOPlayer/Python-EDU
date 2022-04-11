@@ -11,3 +11,6 @@ def main():
         print(count)
     #print a message
     print("Done")
+    
+if __name__ == "__main__":
+    main()
