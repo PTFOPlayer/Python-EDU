@@ -1,4 +1,4 @@
-#get camera image and display it on screen using opencv
+#program detecting blue color in camera image
 
 import cv2
 import numpy as np
